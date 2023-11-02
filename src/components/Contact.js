@@ -3,12 +3,13 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
-import Grid from "@material-mui/core/Grid";
+import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Send from "@material-ui/icons/Send";
 
 // Importa los iconos de LinkedIn, Instagram y correo electrónico
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import GithubIcon from "@material-ui/icons/GitHub";
 import InstagramIcon from "@material-ui/icons/Instagram";
 
 const useStyles = makeStyles((theme) => ({
@@ -118,11 +119,15 @@ const Contact = () => {
           <div className={classes.socialIcons}>
             <LinkedInIcon
               className={classes.socialIcon}
-              onClick={() => window.open("URL de tu perfil de LinkedIn", "_blank")}
+              onClick={() => window.open("https://ar.linkedin.com/in/thiago-baranczuk-4907a1284", "_blank")}
+            />
+            <GithubIcon
+              className={classes.socialIcon}
+              onClick={() => window.open("https://github.com/thiagobaran", "_blank")}
             />
             <InstagramIcon
               className={classes.socialIcon}
-              onClick={() => window.open("URL de tu perfil de Instagram", "_blank")}
+              onClick={() => window.open("https://www.instagram.com/baranas.co/", "_blank")}
             />
           </div>
         </Box>
