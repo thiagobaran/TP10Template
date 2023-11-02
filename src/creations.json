@@ -1,0 +1,85 @@
+[
+    {
+        "title": "Ecommerce",
+        "description": "La idea de este proyecto es crear una pagina que contenga productos para asi poder crear un Ecommerce",
+        "imagen": ["images/ecommerce.jpg"],
+        "date": "2023-07-13",
+        "url": "https://github.com/thiagobaran/TP7.git",
+        "featured":true,
+        "favorito":true
+    },
+    {
+        "title": "Guess de flag!",
+        "description": "Juego para adivinar el pais de la bandera",
+        "image": ["images/flags.png"],
+        "date": "2023-06-09",
+        "url": "https://github.com/thiagobaran/TP6React",
+        "featured":true,
+        "favorito":false
+    },
+    {
+        "title": "Consultora",
+        "description": "Baranas Co. es una empresa de software",
+        "image": ["images/consultora.jpg"],
+        "date": "2022-06-26",
+        "url": "https://www.instagram.com/baranas.co/",
+        "featured":false,
+        "favorito":true
+    },
+    {
+        "title": "Organizador de citas",
+        "description": "web para organizar crear y eliminar citas para un veterinario",
+        "image": ["images/veterinario.jpg"],
+        "date": "2022-05-17",
+        "url": "https://github.com/thiagobaran/tp5ReactAranaBaranczuk",
+        "featured":true,
+        "favorito":false
+    },
+    {
+        "title": "Logueo de perfil",
+        "description": "Web que permite crear usuario y loguearse",
+        "image": ["images/login.gif"],
+        "date": "2023-09-07",
+        "url": "https://github.com/thiagobaran/DAILogin",
+        "featured":false,
+        "favorito":false
+    },
+    {
+        "title": "App geriatricos",
+        "description": "Una app para conectar a las familiar de los pacientes con las residencias",
+        "image": ["images/heart.jpg"],
+        "date": "2023-04-07",
+        "url": "https://github.com/facurozen/Proyecto-Final-2023",
+        "featured":true,
+        "favorito":false
+    },
+    {
+        "title": "Helpark",
+        "description": "Una app para Ayudar a personas con parkinson",
+        "image": ["images/Helpark.png"],
+        "date": "2023-04-07",
+        "url": "https://github.com/agusBrodsky/TrabajoProyecyoFinal",
+        "featured":true,
+        "favorito":false
+    },
+    {
+        "title": "Tienda de telas",
+        "description": "Una app para un negocio de telas",
+        "image": ["images/telas.jpg"],
+        "date": "2022-11-17",
+        "url": "https://github.com/santiarana/TP09_Arana_Baranczuk",
+        "featured":true,
+        "favorito":false
+    },
+    {
+        "title": "SQL Pizzas",
+        "description": "Un node con informacion de pizzas",
+        "image": ["images/pizza.webp"],
+        "date": "2022-04-26",
+        "url": "https://github.com/thiagobaran/Nodejs-mssql",
+        "featured":false,
+        "favorito":false
+    }
+    
+]
+
