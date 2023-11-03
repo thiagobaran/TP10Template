@@ -6,8 +6,6 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Send from "@material-ui/icons/Send";
-
-// Importa los iconos de LinkedIn, Instagram y correo electrónico
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GithubIcon from "@material-ui/icons/GitHub";
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -115,7 +113,6 @@ const Contact = () => {
             Contact Me
           </Button>
           
-          {/* Botones de redes sociales */}
           <div className={classes.socialIcons}>
             <LinkedInIcon
               className={classes.socialIcon}

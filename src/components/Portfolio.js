@@ -26,12 +26,11 @@ const Portfolio = () => {
   const classes = useStyles();
   const [projects, setProjects] = useState([]);
   const [favorites, setFavorites] = useState({});
+  
 
   useEffect(() => {
-    // Cargar proyectos desde el JSON al inicializar el componente
     setProjects(creationsData);
 
-    // Cargar favoritos desde localStorage al inicializar el componente
     const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
     if (storedFavorites) {
       setFavorites(storedFavorites);
@@ -39,18 +38,15 @@ const Portfolio = () => {
   }, []);
 
   useEffect(() => {
-    // Guardar favoritos en localStorage cuando cambian
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
 
   const toggleFavorite = (title) => {
-    // Actualizar el estado local de favoritos
     setFavorites((prevFavorites) => ({
       ...prevFavorites,
       [title]: !prevFavorites[title],
     }));
 
-    // Actualizar el JSON con el nuevo estado de favorito
     setProjects((prevProjects) =>
     prevProjects.map((project) => {
       if (project.title === title) {
