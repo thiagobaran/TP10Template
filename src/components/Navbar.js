@@ -16,13 +16,13 @@ import ArrowBack from "@material-ui/icons/ArrowBack";
 import AssignmentInd from "@material-ui/icons/AssignmentInd";
 import Home from "@material-ui/icons/Home";
 import Apps from "@material-ui/icons/Apps";
-import Favs from "@material-ui/icons/Favorite";
 import ContactMail from "@material-ui/icons/ContactMail";
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import { makeStyles } from "@material-ui/core/styles";
 import avatar from "../avatar.png";
-import Badge from '@mui/material/Badge';
+
 import Footer from "../components/Footer";
-import { useFavoritos } from "../FavoritosContext";
+import Favoritos from "./Favoritos";
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
@@ -55,15 +55,14 @@ const menuItems = [
   { listIcon: <Home />, listText: "Home", listPath: "/" },
   { listIcon: <AssignmentInd />, listText: "Info", listPath: "/resume" },
   { listIcon: <Apps />, listText: "Portfolio", listPath: "/portfolio" },
-  { listIcon: <Favs />, listText: "Favoritos", listPath: "/favoritos" },
+  { listIcon: <FavoriteIcon />, listText: "Favoritos", listPath: "/favoritos" },
   { listIcon: <ContactMail />, listText: "Contact", listPath: "/contact" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const { favoritos } = useFavoritos();
+
   const classes = useStyles();
-  const favoritosCount = Object.keys(favoritos).length;
 
   const sideList = () => (
     <Box className={classes.menuSliderContainer} component="div">
@@ -100,11 +99,6 @@ const Navbar = () => {
             <Typography variant="h5" className={classes.title}>
               Portfolio
             </Typography>
-            <IconButton component={Link} to="/favoritos" style={{ color: "white" }}>
-              <Badge badgeContent={favoritosCount} color="secondary">
-                <Favs />
-              </Badge>
-            </IconButton>
           </Toolbar>
         </AppBar>
       </Box>

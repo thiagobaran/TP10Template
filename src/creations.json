@@ -2,7 +2,7 @@
     {
         "title": "Ecommerce",
         "description": "La idea de este proyecto es crear una pagina que contenga productos para asi poder crear un Ecommerce",
-        "imagen": ["images/ecommerce.jpg"],
+        "image": ["images/ecommerce.jpg"],
         "date": "2023-07-13",
         "url": "https://github.com/thiagobaran/TP7.git",
         "featured":true,

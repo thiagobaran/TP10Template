@@ -5,14 +5,12 @@ import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Typed from "react-typed";
 import { makeStyles } from "@material-ui/core/styles";
-import avatar from "../images/logo.PNG";
+import avatar from "../barana.png";
 import creationsData from "../creations.json";
-import { useFavoritos } from "../FavoritosContext";
-
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
-    width: theme.spacing(30),
+    width: theme.spacing(15),
     height: theme.spacing(15),
     margin: theme.spacing(1),
   },
@@ -52,11 +50,13 @@ const Home = () => {
   const [featuredCreations, setFeaturedCreations] = useState(creationsData.filter((creation) => creation.featured));
 
   useEffect(() => {
+    // Cargar favoritos desde localStorage al inicializar el componente
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || {};
     setFavorites(storedFavorites);
   }, []);
 
   useEffect(() => {
+    // Guardar favoritos en localStorage cuando cambian
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
 

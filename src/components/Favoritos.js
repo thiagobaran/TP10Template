@@ -21,71 +21,73 @@ const useStyles = makeStyles((theme) => ({
     margin: "3rem auto",
   },
 }));
+
 const Favoritos = () => {
-    const classes = useStyles();
-    const [favorites, setFavorites] = useState({});
-    const [favoriteCreations, setFavoriteCreations] = useState([]);
-  
-    useEffect(() => {
-      const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
-      if (storedFavorites) {
-        setFavorites(storedFavorites);
-      }
-    }, []);
-  
-    useEffect(() => {
-      const favoriteProjects = creationsData.filter((project) => favorites[project.title]);
-      setFavoriteCreations(favoriteProjects);
-    }, [favorites]);
-  
-    const toggleFavorite = (title) => {
-      setFavorites((prevFavorites) => {
-        const newFavorites = { ...prevFavorites };
-        delete newFavorites[title];
-        return newFavorites;
-      });
-    };
-  
-    return (
-      <Box component="div" className={classes.mainContainer}>
-        <Grid container justify="center">
-          {favoriteCreations.map((project, i) => (
-            <Grid item xs={12} sm={8} md={4} key={i}>
-              <Card className={classes.cardContainer}>
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    alt={project.title}
-                    height="140"
-                    image={project.image}
-                  />
-                  <CardContent>
-                    <Typography variant="h5" gutterBottom>
-                      {project.title}
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary">
-                      {project.description}
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary">
-                      {project.date}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <CardActions>
-                  <Button
-                    onClick={() => window.open(project.url, "_blank")}
-                    size="small"
-                    color="primary"
-                  >
-                    Link
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-    );
+  const classes = useStyles();
+  const [favorites, setFavorites] = useState({});
+  const [favoriteCreations, setFavoriteCreations] = useState([]);
+
+  useEffect(() => {
+    const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
+    if (storedFavorites) {
+      setFavorites(storedFavorites);
+    }
+  }, []);
+
+  useEffect(() => {
+    const favoriteProjects = creationsData.filter((project) => favorites[project.title]);
+    setFavoriteCreations(favoriteProjects);
+  }, [favorites]);
+
+  const toggleFavorite = (title) => {
+    setFavorites((prevFavorites) => {
+      const newFavorites = { ...prevFavorites };
+      delete newFavorites[title];
+      return newFavorites;
+    });
   };
+
+  return (
+    <Box component="div" className={classes.mainContainer}>
+      <Grid container justify="center">
+        {favoriteCreations.map((project, i) => (
+          <Grid item xs={12} sm={8} md={4} key={i}>
+            <Card className={classes.cardContainer}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  alt={project.title}
+                  height="140"
+                  image={project.image}
+                />
+                <CardContent>
+                  <Typography variant="h5" gutterBottom>
+                    {project.title}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    {project.description}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    {project.date}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button
+                  onClick={() => window.open(project.url, "_blank")}
+                  size="small"
+                  color="primary"
+                >
+                  Link
+                </Button>
+                
+              </CardActions>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+  );
+};
 
 export default Favoritos;
